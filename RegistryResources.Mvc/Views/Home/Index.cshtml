@@ -1,8 +1,32 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@inject IHtmlLocalizer<HomeController> localizer
+
+@{
+    ViewData["Title"] = localizer["Home"];
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card" style="margin-bottom:1em;">
+                    <div class="card-header" style="background-color:black; color:white">@localizer["Welcome"]</div>
+                    <div class="card-body">@localizer["WelcomeMessage"]</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card" style="margin-bottom:1em;">
+                    <div class="card-header" style="background-color:black; color:white">@localizer["ByTheNumbers"]</div>
+                    <div class="card-body">@Html.Partial("_MetricsPartial")</div>
+                    @*<div class="card-footer">Footer</div>*@
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card" style="margin-bottom:1em;">
+                    <div class="card-header" style="background-color:black; color:white">@localizer["ResearchCenter"]</div>
+                    <div class="card-body">@localizer["ResearchMessage"]</div>
+                    @*<div class="card-footer">Footer</div>*@
+                </div>
+            </div>
+        </div>
+    </div>

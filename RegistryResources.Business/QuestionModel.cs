@@ -19,21 +19,12 @@ namespace RegistryResources.Business
         [Key]
         public int QuestionId { get; set; }
         public string QuestionKey { get; set; }
-        [NotMapped]
-        public Dictionary<string, string> dicQuestion { get; set; }
         public QuestionTypes QuestionType { get; set; }
         public string ConstraintKey { get; set; }
         [NotMapped]
         public string ConstrainedValues { get; set; }
-        [NotMapped]
-        public Dictionary<string, Dictionary<string, string>> dicConstrainedValues { get; set; }
         public bool IsRequired { get; set; }
         public ICollection<QuestionAnswerModel> QuestionAnswers { get; } = new List<QuestionAnswerModel>();
         public ICollection<SurveyQuestionModel> SurveyQuestions { get; } = new List<SurveyQuestionModel>();
-
-        public QuestionModel()
-        {
-            dicQuestion = new Dictionary<string, string>();
-        }
     }
 }

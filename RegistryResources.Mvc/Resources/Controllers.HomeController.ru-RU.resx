@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ByTheNumbers" xml:space="preserve">
+    <value>По цифрам</value>
+  </data>
+  <data name="CompletedStudies" xml:space="preserve">
+    <value>Завершено обучение</value>
+  </data>
+  <data name="CountriesParticipating" xml:space="preserve">
+    <value>Страны-участницы</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Отправить по электронной почте</value>
+  </data>
+  <data name="Enroll" xml:space="preserve">
+    <value>Зарегистрироваться</value>
+  </data>
+  <data name="EnrollMessage" xml:space="preserve">
+    <value>Не член? Нажмите здесь, чтобы зарегистрироваться.</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Домой</value>
+  </data>
+  <data name="HomeMenu" xml:space="preserve">
+    <value>Дома</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Войти</value>
+  </data>
+  <data name="LoginTrouble" xml:space="preserve">
+    <value>Проблемы при входе?</value>
+  </data>
+  <data name="MainIcon" xml:space="preserve">
+    <value>babel-family-logo.png</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="PatientMenu" xml:space="preserve">
+    <value>Пациенты</value>
+  </data>
+  <data name="PatientRegistry" xml:space="preserve">
+    <value>Реестр пациентов</value>
+  </data>
+  <data name="PatientsRegistered" xml:space="preserve">
+    <value>PПациенты, зарегистрированные</value>
+  </data>
+  <data name="Privacy" xml:space="preserve">
+    <value>Конфиденциальность</value>
+  </data>
+  <data name="PrivacyMenu" xml:space="preserve">
+    <value>Конфиденциальности</value>
+  </data>
+  <data name="PrivacyStatement" xml:space="preserve">
+    <value>Вот где политика конфиденциальности идет.  Он будет говорить avout такие вещи, как безопасность, конфиденциальность, GDPR правил, а также HIPPA политики.</value>
+  </data>
+  <data name="Registry Resources" xml:space="preserve">
+    <value>Ресурсы реестра</value>
+  </data>
+  <data name="ResearchCenter" xml:space="preserve">
+    <value>Научно-исследовательский центр</value>
+  </data>
+  <data name="ResearchMenu" xml:space="preserve">
+    <value>Исследователи</value>
+  </data>
+  <data name="ResearchMessage" xml:space="preserve">
+    <value>Пожалуйста, посетите www.clinicaltrials.gov для полного списка исследований
+
+Любой, кто рассматривает возможность участия в клинических испытаниях, должен обсудить этот вопрос со своим врачом. Организации-члены ФАГР не одобряют и не рекомендуют какое-либо конкретное исследование.</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Войти</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Реестр пациентов</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>&lt;h2&gt;Добро пожаловать&lt;/h2&gt;</value>
+  </data>
+  <data name="WelcomeMessage" xml:space="preserve">
+    <value> &lt;p&gt;The Friedreich's Ataxia Глобальный реестр пациентов (FAGPR) поддерживается международными организациями по защите пациентов через Совет по управлению. Целью реестра является сбор информации от всех пациентов FA в одном месте, развитие реестра в мощный ресурс для исследований, а также предоставить информацию для сообщества FA по исследованиям, направленным на продвижение лечения FA. &lt;/p&gt;&lt;p&gt;Позите направляем любые вопросы координаторам реестра Этот реестр предназначен для людей с диагнозом Friedreichs ataxia. Для других диагнозов атаксии, пожалуйста, посетите Национальный фонд Атаксия&lt;/p&gt;</value>
+  </data>
+  <data name="YearsCollectingData" xml:space="preserve">
+    <value>Годы сбора данных</value>
+  </data>
+</root>

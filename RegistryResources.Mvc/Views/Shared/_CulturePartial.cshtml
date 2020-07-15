@@ -1,0 +1,29 @@
+﻿@inject IOptions<RequestLocalizationOptions> LocOptions
+
+@{
+    List<SelectListItem> supportedUICultures = LocOptions.Value
+        .SupportedUICultures
+        .Select(c => new SelectListItem
+        {
+            Value = c.Name,
+            Text = c.DisplayName
+        })
+        .ToList();
+
+    IRequestCultureFeature cultureFeature = Context.Features.Get<IRequestCultureFeature>();
+}
+
+<form class="navbar-form navbar-right form-horizintal"
+      id="cultureForm"
+      asp-controller="Culture"
+      asp-action="Set"
+      asp-route-returnUrl="@Context.Request.Path"
+      method="post"
+      role="form">
+    <select class="form-control"
+            id="uiCulture"
+            name="uiCulture"
+            asp-for="@cultureFeature.RequestCulture.UICulture.Name"
+            asp-items="@supportedUICultures">
+    </select>
+</form>
