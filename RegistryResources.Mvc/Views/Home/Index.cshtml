@@ -4,6 +4,8 @@
     ViewData["Title"] = localizer["Home"];
 }
 
+@if (!User.Identity.IsAuthenticated)
+{
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -21,7 +23,7 @@
                     @*<div class="card-footer">Footer</div>*@
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-8">
                 <div class="card" style="margin-bottom:1em;">
                     <div class="card-header" style="background-color:black; color:white">@localizer["ResearchCenter"]</div>
                     <div class="card-body">@localizer["ResearchMessage"]</div>
@@ -30,3 +32,4 @@
             </div>
         </div>
     </div>
+}

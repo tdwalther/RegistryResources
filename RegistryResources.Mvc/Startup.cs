@@ -19,6 +19,8 @@ using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Razor;
 using ServiceStack;
+using RegistryResources.Data;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace RegistryResources.Mvc
 {
@@ -42,7 +44,7 @@ namespace RegistryResources.Mvc
         public void ConfigureServices(IServiceCollection services)
         {
             IMvcBuilder mvcBuilder = services.AddMvc();
-            
+
             mvcBuilder.AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
 
             mvcBuilder.AddDataAnnotationsLocalization(options =>
@@ -83,16 +85,28 @@ namespace RegistryResources.Mvc
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
-            
+            services.AddIdentity<IdentityUser, IdentityRole>(options =>
+            {
+                options.SignIn.RequireConfirmedAccount = true;
+                options.Password.RequiredLength = 8;
+                options.Password.RequireNonAlphanumeric = true;
+                options.Password.RequireUppercase = true;
+                options.User.RequireUniqueEmail = true;
+            }).AddEntityFrameworkStores<ApplicationDbContext>();
+
+            //services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            //    .AddEntityFrameworkStores<ApplicationDbContext>();
+
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            services.AddScoped<IDataContext, DataContextSQL>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(
-            IApplicationBuilder app, 
+            IApplicationBuilder app,
             IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

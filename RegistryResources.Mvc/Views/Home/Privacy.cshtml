@@ -1,6 +1,8 @@
-﻿@{
-    ViewData["Title"] = "Privacy Policy";
-}
-<h1>@ViewData["Title"]</h1>
+﻿@inject IHtmlLocalizer<HomeController> localizer
 
-<p>Use this page to detail your site's privacy policy.</p>
+<img src="~/Content/privacy.png" />
+
+<h2>@localizer["Privacy Policy"]</h2>
+<p />
+
+@localizer["Privacy Statement"]

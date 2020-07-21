@@ -1,50 +1,67 @@
 ﻿@inject IHtmlLocalizer<HomeController> localizer
+@model MetricsViewModel;
 
-<style>
-    td {
-        height: 4em;
-    }
-</style>
+    <div class="container">
 
-<table>
-    <tr>
-        <td style="width:100px;">
-            <span class="badge badge-dark" style="font-size:large">
-                15
-            </span>
-        </td>
-        <td>
-            @localizer["YearsCollectingData"]
-        </td>
-    </tr>
-    <tr>
-        <td style="width:100px;">
-            <h3 class="badge badge-dark" style="font-size:large">
-                3421
-            </h3>
-        </td>
-        <td>
-            @localizer["PatientsRegistered"]
-        </td>
-    </tr>
-    <tr>
-        <td style="width:100px;">
-            <h3 class="badge badge-dark" style="font-size:large">
-                18
-            </h3>
-        </td>
-        <td>
-            @localizer["CountriesParticipating"]
-        </td>
-    </tr>
-    <tr>
-        <td style="width:100px;">
-            <h3 class="badge badge-dark" style="font-size:large">
-                109
-            </h3>
-        </td>
-        <td>
-            @localizer["CompletedStudies"]
-        </td>
-    </tr>
-</table>
+        @foreach (var key in Model.Counters)
+        {
+            
+
+            <div class="row">
+                <span style="height:60px;">
+                    <span class="badge badge-dark" style="font-size:large; width:100px;margin-right:8px"> @key.Item2 </span>
+                    <span style="min-width:200px;">@localizer[key.Item1]</span>
+                </span>
+            </div>
+        }
+
+    </div>
+
+    @*<style>
+            td {
+                height: 4em;
+            }
+        </style>
+
+        <table>
+            <tr>
+                <td style="width:100px;">
+                    <span class="badge badge-dark" style="font-size:large">
+                        15
+                    </span>
+                </td>
+                <td style="width:180px">
+                    @localizer["YearsCollectingData"]
+                </td>
+            </tr>
+            <tr>
+                <td style="width:100px;">
+                    <h3 class="badge badge-dark" style="font-size:large">
+                        3421
+                    </h3>
+                </td>
+                <td style="width:180px">
+                    @localizer["PatientsRegistered"]
+                </td>
+            </tr>
+            <tr>
+                <td style="width:100px;">
+                    <h3 class="badge badge-dark" style="font-size:large">
+                        18
+                    </h3>
+                </td>
+                <td style="width:180px">
+                    @localizer["CountriesParticipating"]
+                </td>
+            </tr>
+            <tr>
+                <td style="width:100px;">
+                    <h3 class="badge badge-dark" style="font-size:large">
+                        109
+                    </h3>
+                </td>
+                <td style="width:180px">
+                    @localizer["CompletedStudies"]
+                </td>
+            </tr>*@
+    </table>

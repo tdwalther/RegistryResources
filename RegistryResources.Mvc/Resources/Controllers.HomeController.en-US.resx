@@ -165,11 +165,37 @@
   <data name="Privacy" xml:space="preserve">
     <value>Privacy</value>
   </data>
+  <data name="Privacy Policy" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="Privacy Statement" xml:space="preserve">
+    <value>&lt;p&gt;
+    We care about the security and privacy of your infomation, and so should you.  This registry adheres to the strict
+    data security and privacy standards established by:
+&lt;/p&gt;
+
+&lt;ul&gt;
+    &lt;li&gt;&lt;a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4479743/" target="_blank"&gt;Institutional Review Board (IRB)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="https://www.hhs.gov/hipaa/index.html" target="_blank"&gt;Health Insurance Portability and Accountability Act (HIPPA)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="https://gdpr-info.eu/" target="_blank"&gt;General Data Protection Regulation (GDPR)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+    We will only ask you for infomation relevant to ongoing studies, and questions will be submitted to Institional Review
+    Boards for verification before being asked of you.
+&lt;/p&gt;
+
+&lt;p&gt;
+    You own the data you share with us.  You have the right to ask us to provide you with the
+    information you share, and to remove that information from the registry if you choose to terminate your relationship
+    with the registry.
+&lt;/p&gt;</value>
+  </data>
   <data name="PrivacyMenu" xml:space="preserve">
     <value>Privacy</value>
   </data>
-  <data name="PrivacyStatement" xml:space="preserve">
-    <value>Here is where the privacy policy goes.  It will talk avout things like security, privacy, GDPR regulations, and also HIPPA policies.</value>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
   </data>
   <data name="Registry Resources" xml:space="preserve">
     <value>Registry Resources</value>

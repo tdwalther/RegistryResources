@@ -165,11 +165,37 @@
   <data name="Privacy" xml:space="preserve">
     <value>Intimidad</value>
   </data>
+  <data name="Privacy Policy" xml:space="preserve">
+    <value>Política de Privacidad</value>
+  </data>
+  <data name="Privacy Statement" xml:space="preserve">
+    <value>&lt;p&gt;
+    Nos preocupamos por la seguridad y privacidad de su información, y usted también debería hacerlo. Este registro se adhiere a lo estricto
+    seguridad de datos y estándares de privacidad establecidos por:
+&lt;/p&gt;
+
+&lt;ul&gt;
+    &lt;li&gt; &lt;a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4479743/" target="_blank"&gt; Junta de Revisión Institucional (IRB) &lt;/a&gt; &lt;/li&gt;
+    &lt;li&gt; &lt;a href="https://www.hhs.gov/hipaa/index.html" target="_blank"&gt; Ley de Responsabilidad y Portabilidad del Seguro Médico (HIPPA) &lt;/a&gt; &lt;/li&gt;
+    &lt;li&gt; &lt;a href="https://gdpr-info.eu/" target="_blank"&gt; Reglamento general de protección de datos (GDPR) &lt;/a&gt; &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+    Solo le pediremos información relevante para los estudios en curso, y las preguntas se enviarán a Revisión Institucional
+    Tablas para verificación antes de que se le solicite.
+&lt;/p&gt;
+
+&lt;p&gt;
+    Usted es dueño de los datos que comparte con nosotros. Tiene derecho a solicitarnos que le proporcionemos el
+    información que comparte, y eliminar esa información del registro si decide terminar su relación
+    con el registro
+&lt;/p&gt;</value>
+  </data>
   <data name="PrivacyMenu" xml:space="preserve">
     <value>Privacidad</value>
   </data>
-  <data name="PrivacyStatement" xml:space="preserve">
-    <value>Aquí es donde va la política de privacidad.  Hablará cosas como seguridad, privacidad, regulaciones GDPR, y también políticas HIPPA.</value>
+  <data name="Register" xml:space="preserve">
+    <value>Registrarse</value>
   </data>
   <data name="Registry Resources" xml:space="preserve">
     <value>Recursos de registro</value>

@@ -22,6 +22,7 @@ namespace RegistryResources.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             Console.WriteLine("OnConfiguring");
+            _ConnectionString = "Server = (localdb)\\mssqllocaldb; Database = RegistryResources; Trusted_Connection = True; MultipleActiveResultSets = true";
             optionsBuilder.UseSqlServer(_ConnectionString);
         }
 
