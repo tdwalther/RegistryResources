@@ -1,0 +1,13 @@
+﻿@model RegistryResources.Business.PatientModel
+
+<h2>Patient Center</h2>
+<h3>@ViewBag.UserName</h3>
+<h3>@ViewBag.UserID</h3>
+
+<div>
+    @Model.Registrant.FirstName @Model.Registrant.LastName
+</div>
+
+<div>
+    @await Component.InvokeAsync("Alerts")
+</div>

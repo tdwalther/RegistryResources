@@ -20,5 +20,11 @@ namespace RegistryResources.Data
         public DbSet<AnswerModel> Answers { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public DbSet<ResearcherModel> Researchers { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public DbSet<CultureModel> Cultures { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public DbSet<AlertModel> Alerts { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public int Save()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -1,5 +1,42 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@using RegistryResources.Mvc.ViewModels
+@model AdminViewModel
+
+<h2>Admin Center</h2>
+
+<h3>Patients</h3>
+
+<div>
+    @await Component.InvokeAsync("Alerts")
+</div>
+
+<table class="table table-dark">
+    @foreach (PatientModel pat in Model.Patients)
+    {
+        <tr>
+            <td>@pat.Registrant.FirstName @pat.Registrant.LastName</td>
+            <td>@pat.Registrant.Email.EmailAddress</td>
+        </tr>
+    }
+</table>
+
+<h3>Proxies</h3>
+<table class="table table-dark">
+    @foreach (ProxyModel pat in Model.Proxies)
+    {
+        <tr>
+            <td>@pat.Registrant.FirstName @pat.Registrant.LastName</td>
+            <td>@pat.Registrant.Email.EmailAddress</td>
+        </tr>
+    }
+</table>
+
+<h3>Researchers</h3>
+<table class="table table-dark">
+    @foreach (ResearcherModel pat in Model.Researchers)
+    {
+        <tr>
+            <td>@pat.Registrant.FirstName @pat.Registrant.LastName</td>
+            <td>@pat.Registrant.Email.EmailAddress</td>
+        </tr>
+    }
+</table>

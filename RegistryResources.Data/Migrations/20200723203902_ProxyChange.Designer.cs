@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RegistryResources.Data;
 
 namespace RegistryResources.Data.Migrations
 {
     [DbContext(typeof(DataContextSQL))]
-    partial class DataContextSQLModelSnapshot : ModelSnapshot
+    [Migration("20200723203902_ProxyChange")]
+    partial class ProxyChange
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -59,39 +61,6 @@ namespace RegistryResources.Data.Migrations
                     b.HasKey("AddressId");
 
                     b.ToTable("Addresses");
-                });
-
-            modelBuilder.Entity("RegistryResources.Business.AlertModel", b =>
-                {
-                    b.Property<int>("AlertId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("Display")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("DisplayDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Message")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("RecipientId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ReplayCount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("AlertId");
-
-                    b.ToTable("Alerts");
                 });
 
             modelBuilder.Entity("RegistryResources.Business.AnswerModel", b =>

@@ -11,14 +11,14 @@ using RegistryResources.Data;
 
 namespace RegistryResources.Mvc.Controllers
 {
-    public class PatientController : Controller
+    public class ProxyController : Controller
     {
         private readonly IDataContext _dataContext;
         private readonly UserManager<IdentityUser> _userManager;
 
-        public PatientController(
-            IDataContext dataContext,
-             UserManager<IdentityUser> userManager)
+        public ProxyController(
+            IDataContext dataContext, 
+            UserManager<IdentityUser> userManager)
         {
             _dataContext = dataContext;
             _userManager = userManager;
@@ -30,12 +30,13 @@ namespace RegistryResources.Mvc.Controllers
             ViewBag.UserName = User.Identity.Name;
             ViewBag.UserID = userId;
 
-            PatientModel patient = _dataContext.Patients
-                .Include(p=> p.Registrant)
-                .ThenInclude(p=> p.Address)
+            ProxyModel proxy = _dataContext.Proxies
+                .Include(p => p.Registrant)
+                .Include(p=> p.PatientProxy)
+                .ThenInclude(p=> p.Patient)
+                .ThenInclude(px => px.PatientProxy)
                 .Where(p => p.Registrant.UserId == userId).FirstOrDefault();
-
-            return View(patient);
+            return View(proxy);
         }
     }
 }

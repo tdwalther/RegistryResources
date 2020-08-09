@@ -11,6 +11,6 @@ namespace RegistryResources.Business
         public int ProxyId { get; set; }
         public RegistrantModel Registrant { get; set; }
         public DateTime BirthDate { get; set; }
-        public List<PatientProxyModel> PatientProxy { get; } = new List<PatientProxyModel>();
+        public ICollection<PatientProxyModel> PatientProxy { get; } = new List<PatientProxyModel>();
     }
 }

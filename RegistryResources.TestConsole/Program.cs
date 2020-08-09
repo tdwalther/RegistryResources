@@ -15,6 +15,7 @@ namespace RegistryResources.TestConsole
 
         static void Main(string[] args)
         {
+            CreateAlerts();
             //CreatePatientsAndProxies(500);
             //CreateResearchers(10);
             //CreateSurveys();
@@ -25,6 +26,58 @@ namespace RegistryResources.TestConsole
             //DoQuestionTranslations("es-MX");
             //DoQuestionTranslations("ru-RU");
         }
+
+        #region methods used to create alerts
+
+        static void CreateAlerts()
+        {
+            using (DataContextSQL context = new DataContextSQL(_ConnectionString))
+            {
+                var alerts = new List<AlertModel>();
+
+                var registrants = context.Patients.Select(pat => new
+                {
+                    regId = pat.Registrant.RegistrantId,
+                    userId = pat.Registrant.UserId
+                }).ToList();
+
+                registrants.AddRange(context.Proxies.Select(pxy => new 
+                { 
+                    regId = pxy.Registrant.RegistrantId,
+                    userId = pxy.Registrant.UserId
+                }));
+
+                registrants.AddRange(context.Researchers.Select(res => new
+                {
+                    regId = res.Registrant.RegistrantId,
+                    userId = res.Registrant.UserId
+                }));
+
+                foreach (var reg in registrants)
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                        if (RandomNumbers.GetDouble() > 0.5)
+                        {
+                            alerts.Add(new AlertModel()
+                            {
+                                CreateDate = DateTime.Now,
+                                Display = true,
+                                DisplayDate = DateTime.Now,
+                                Message = LoremNET.Lorem.Sentence(3, 12),
+                                RecipientId = reg.regId,
+                                UserId = reg.userId,
+                                ReplayCount = 4
+                            });
+                        }
+                    }
+                }
+                context.Alerts.AddRange(alerts);
+                int retval  = context.Save();
+            }
+        }
+
+        #endregion
 
         #region methods used to create patients and proxies
 
@@ -493,14 +546,14 @@ namespace RegistryResources.TestConsole
                 var questions = context.Questions.Select(q => q.QuestionKey).Distinct().ToList();
                 var rawConstraints = context.Questions.Select(q => q.ConstraintKey).ToList();
                 var constraints = new List<string>();
-                
-                foreach( var con in rawConstraints)
+
+                foreach (var con in rawConstraints)
                 {
                     constraints.AddRange(con.Split("/".ToCharArray()));
                 }
                 constraints = constraints.Distinct().ToList();
 
-                foreach( var con in constraints)
+                foreach (var con in constraints)
                 {
                     context.Cultures.Add(new CultureModel()
                     {

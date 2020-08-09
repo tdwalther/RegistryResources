@@ -35,8 +35,26 @@ namespace RegistryResources.Mvc.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                //if( )
-                return RedirectToAction("UserManagement", "Admin");
+                if (User.IsInRole("Coordinator"))
+                {
+                    return RedirectToAction("Index", "Admin");
+                }
+                else if (User.IsInRole("Patient") )
+                {
+                    return RedirectToAction("Index", "Patient");
+                }
+                else if( User.IsInRole("Proxy"))
+                {
+                    return RedirectToAction("Index", "Proxy");
+                }
+                else if(User.IsInRole("Researcher"))
+                {
+                    return RedirectToAction("Index", "Researcher");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Patient");
+                }
             }
             else
             {

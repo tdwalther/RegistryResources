@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RegistryResources.Data;
 
 namespace RegistryResources.Data.Migrations
 {
     [DbContext(typeof(DataContextSQL))]
-    partial class DataContextSQLModelSnapshot : ModelSnapshot
+    [Migration("20200808153804_newAlerts")]
+    partial class newAlerts
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

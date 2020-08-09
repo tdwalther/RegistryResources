@@ -51,13 +51,13 @@
                     <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">@localizer["PrivacyMenu"]</a>
                 </li>
 
-                <li class="nav-item">
+                @*<li class="nav-item">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </li>
+                </li>*@
 
-                <li class="nav-item">
+                @*<li class="nav-item">
                     @await Html.PartialAsync("_CulturePartial")
-                </li>
+                </li>*@
             </ul>
         </div>
     </nav>
@@ -71,7 +71,10 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - RegistryResources.Mvc - <a asp-area="" asp-controller="Home" asp-action="Privacy">@localizer["Privacy"]</a>
+            <div class="row">
+                &copy; 2020 - RegistryResources.Mvc - <a asp-area="" asp-controller="Home" asp-action="Privacy">@localizer["Privacy"]</a>
+                @*@await Html.PartialAsync("_CulturePartial")*@
+            </div>
         </div>
     </footer>
 

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using RegistryResources.Business;
 using System;
 using System.Collections.Generic;
@@ -13,11 +14,24 @@ namespace RegistryResources.Data
         public DbSet<PatientModel> Patients { get; set; }
         public DbSet<ProxyModel> Proxies { get; set; }
         public DbSet<ResearcherModel> Researchers { get; set; }
-        public DbSet<RegistrantModel> Registrants { get; set; }
         public DbSet<SurveyModel> Surveys { get; set; }
         public DbSet<QuestionModel> Questions { get; set; }
         public DbSet<CultureModel> Cultures { get; set; }
         public DbSet<AnswerModel> Answers { get; set; }
+        public DbSet<AlertModel> Alerts { get; set; }
+
+        public int Save()
+        {
+            try
+            {
+                return this.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                return -99;
+            }
+
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -38,7 +52,7 @@ namespace RegistryResources.Data
             modelBuilder.Entity<PatientProxyModel>().ToTable("PatientProxies");
             modelBuilder.Entity<SurveyQuestionModel>().ToTable("SurveyQuestions");
             modelBuilder.Entity<CultureModel>().ToTable("Cultures");
-            
+            modelBuilder.Entity<AlertModel>().ToTable("Alerts");
             modelBuilder.Entity<AnswerModel>().ToTable("Answers");
             modelBuilder.Entity<QuestionAnswerModel>().ToTable("QuestionAnswers");
 
@@ -75,7 +89,7 @@ namespace RegistryResources.Data
             _ConnectionString = "Server = (localdb)\\mssqllocaldb; Database = RegistryResources; Trusted_Connection = True; MultipleActiveResultSets = true";
         }
 
-        public DataContextSQL(string connectionString=null)
+        public DataContextSQL(string connectionString = null)
         {
             _ConnectionString = connectionString;
         }

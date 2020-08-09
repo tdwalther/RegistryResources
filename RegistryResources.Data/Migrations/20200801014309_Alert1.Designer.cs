@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RegistryResources.Data;
 
 namespace RegistryResources.Data.Migrations
 {
     [DbContext(typeof(DataContextSQL))]
-    partial class DataContextSQLModelSnapshot : ModelSnapshot
+    [Migration("20200801014309_Alert1")]
+    partial class Alert1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -85,9 +87,6 @@ namespace RegistryResources.Data.Migrations
 
                     b.Property<int>("ReplayCount")
                         .HasColumnType("int");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("AlertId");
 
